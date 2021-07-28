@@ -84,13 +84,13 @@ function showData() {
     $result = '';
 
     foreach ($data as $item ) {
-        $result .= '<div class="note">';
+        $result .= '<div style="border: 1px dashed black">';
         $result .= '<p>';
         $result .= "<span class='date'>" . $item['date'] . "</span>";
         $result .= " <span class='date' style='color:cornflowerblue'>" . $item['user'] . "</span>";
         $result .= '</p>';
-        $result .= '<p style="font-style: italic">' . $item['message'] . '</p></div>';
-        $result .= '<p><a href="?del='. $item['id'] .'"' . '>Delete</a></td></p>';
+        $result .= '<p style="font-style: italic">' . $item['message'] . '</p>';
+        $result .= '<button class="btn btn-danger" ><a href="?del='. $item['id'] .'"' . ' style="color:white">Delete</a></button></div>';
     }
 
     return $result;
@@ -122,6 +122,7 @@ function deleteMessage() {
         $query = "DELETE FROM guestbook WHERE id = $id";
         try {
             $db->query($query);
+            var_dump('Сообщение удалено!');
         } catch (Exception $exception) {
             var_dump($exception);
         }

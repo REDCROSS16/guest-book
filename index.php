@@ -12,7 +12,7 @@ require_once 'func.php'?>
 	<body>
 		<div id="wrapper">
 			<h1>Гостевая книга</h1>
-			<?php echo(pagination(5));?>
+			<?php echo(pagination(10));?>
             <?=showData();?>
             <?=addMessage();?>
             <?=deleteMessage();?>
@@ -26,19 +26,3 @@ require_once 'func.php'?>
 		</div>
 	</body>
 </html>
-
-<?php
-
-
-//if (isset($_REQUEST["submit"])) {
-//    $db = connect();
-//    $name = $_REQUEST['name'];
-//    $message = $_REQUEST['message'];
-//    $date = date('Y-M-D : H:i:s');
-//
-//    $query = "INSERT INTO guestbook (user, message, date) VALUES ('$name', '$message', '$date')";
-//    $res = $db->query($query);
-//    if ($res) {
-//        echo "<div class='info alert alert-info'>Запись успешно сохранена!</div>";
-//    }
-//}
