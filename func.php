@@ -36,26 +36,26 @@ function pagination ($notesOnPage) {
     # создание страниц пагинации
     if ($page > 1) {
         $previousPage = $page - 1;
-        $result .= "<a href='?page=$previousPage' style='color:darkseagreen'><<</a>";
+        $result .= "<li><a href='?page=$previousPage' style='color:darkseagreen'><</a></li>";
     } else {
-        $result .= "<a href='#' disabled><<</a>";
+        $result .= "<li class='disabled'><a href='#' disabled><</a></li>";
     }
 
     for ($i=1; $i <= $pages; $i++) {
         if ($page == $i) {
-            $result .= '<a href="?page=' . $i . '" class="active">' . $i . '</a> ';
+            $result .= '<li class="active"><a href="?page=' . $i . '" >' . $i . '</a></li> ';
         } else {
-            $result .= '<a href="?page=' . $i . '">' . $i . '</a> ';
+            $result .= '<li><a href="?page=' . $i . '">' . $i . '</a></li> ';
         }
     }
 
     if ($page < $pages) {
         $nextPage = $page + 1;
-        $result .= "<a href='?page=$nextPage'>>></a>";
+        $result .= "<li><a href='?page=$nextPage'>></a></li>";
     } else {
-        $result .= "<a href='#' disabled>>></a>";
+        $result .= "<li class='disabled'><a href='#' disabled>></a></li>";
     }
-
+    $result .= '</ul></nav>';
     return $result;
 }
 
