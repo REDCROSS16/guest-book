@@ -30,7 +30,8 @@ function pagination ($notesOnPage) {
 
     $pages = ceil($count->fetch_assoc()['count'] / $notesOnPage);
 
-    $result = '';
+    $result = '<nav>';
+    $result .= '<ul class="pagination">';
 
     # создание страниц пагинации
     if ($page > 1) {
