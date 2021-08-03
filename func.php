@@ -76,7 +76,7 @@ function showData() {
 //    $countQuery = "SELECT COUNT(*) as count FROM guestbook";
 //    $count = $db->query($countQuery);
 //
-//    $pages = ceil($count->fetch_assoc()['count'] / $notesOnPage);
+//    $dir = ceil($count->fetch_assoc()['count'] / $notesOnPage);
     $from = ($page - 1 ) * $notesOnPage;
 
     $query = "SELECT * FROM guestbook LIMIT $from, $notesOnPage";
